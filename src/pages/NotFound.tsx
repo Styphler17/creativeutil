@@ -1,19 +1,9 @@
 import { Helmet } from "react-helmet-async";
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Home, ArrowLeft } from "lucide-react";
 
 const NotFound = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    // Only log 404 errors for non-blog routes
-    if (!location.pathname.startsWith('/blog')) {
-      console.error("404 Error: User attempted to access non-existent route:", location.pathname);
-    }
-  }, [location.pathname]);
 
   return (
     <>

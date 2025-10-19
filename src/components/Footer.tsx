@@ -70,9 +70,6 @@ export const Footer = () => {
           <div>
             <h4 className={`font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Resources</h4>
             <div className="flex flex-col gap-2">
-              <Link to="/blog" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors">
-                Blog
-              </Link>
               <Link to="/about" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors">
                 About Us
               </Link>
