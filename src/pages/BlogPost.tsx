@@ -10,7 +10,6 @@ import { ArrowLeft, Calendar, User, Twitter, Facebook, Linkedin, Clock } from "l
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import remarkGfm from "remark-gfm";
-import bgImage from "@/assets/bg-1.png";
 import "highlight.js/styles/github-dark.css";
 import { blogPosts, BlogPost } from "@/config/blog";
 
@@ -67,14 +66,7 @@ const BlogPost = () => {
         <meta property="article:tag" content={post.tags.join(',')} />
       </Helmet>
       <div className="min-h-screen flex flex-col relative overflow-hidden">
-        <div
-          className="fixed inset-0 -z-10 opacity-30"
-          style={{
-            backgroundImage: `url(${bgImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
+        <div className="fixed inset-0 -z-10 opacity-40 pattern-bg" />
         <div className="fixed top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl -z-10" />
         <div className="fixed bottom-0 left-0 w-96 h-96 bg-accent/20 rounded-full blur-3xl -z-10" />
 

@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import logo from "@/assets/creativeutil-logo.png";
+import logo from "@/assets/creativeutil-logo.svg";
 
 export const Header = () => {
   const location = useLocation();
@@ -36,7 +36,7 @@ export const Header = () => {
       <nav className="max-w-7xl mx-auto glass rounded-3xl px-6 py-4">
         <div className="flex items-center justify-between w-full">
           <Link to="/" className="flex-shrink-0 flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <img src={logo} alt="CreativeUtil Logo" className="h-10 w-10 object-contain" />
+            <img src={logo} alt="CreativeUtil Logo" className="h-10 w-auto object-contain" />
             <span className="text-xl font-bold text-foreground">CreativeUtil</span>
           </Link>
 

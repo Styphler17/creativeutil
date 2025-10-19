@@ -13,7 +13,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge";
 
 import { Search, Sparkles, X } from "lucide-react";
-import bgImage from "@/assets/bg-1.png";
 
 import { tools } from "@/config/tools";
 
@@ -221,14 +220,7 @@ const Tools = () => {
       </Helmet>
       <div className="min-h-screen flex flex-col relative overflow-hidden">
       {/* Animated Background */}
-      <div
-        className="fixed inset-0 -z-10 opacity-30"
-        style={{
-          backgroundImage: `url(${bgImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      />
+      <div className="fixed inset-0 -z-10 opacity-40 pattern-bg" />
 
       {/* Gradient Overlays */}
       <div className="fixed top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl -z-10" />
@@ -259,9 +251,7 @@ const Tools = () => {
           <div className="space-y-8">
               {featuredTool && (
                 <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-r from-primary/20 via-secondary/10 to-accent/10 p-8 shadow-xl">
-                  <div className="absolute inset-0 opacity-20">
-                    <img src={bgImage} alt="" className="h-full w-full object-cover mix-blend-overlay" />
-                  </div>
+                  <div className="absolute inset-0 opacity-20 pattern-bg" />
                   <div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                     <div className="max-w-2xl space-y-3">
                       <div className="inline-flex items-center gap-2 rounded-full bg-background/80 px-3 py-1 text-sm font-semibold text-primary shadow-sm">

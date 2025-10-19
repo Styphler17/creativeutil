@@ -149,4 +149,14 @@ All colors MUST be HSL.
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
+  .pattern-bg {
+    background-color: hsl(var(--background));
+    background-image:
+      radial-gradient(120% 120% at 20% 20%, hsla(var(--primary) / 0.35), transparent 60%),
+      radial-gradient(120% 120% at 80% 25%, hsla(var(--secondary) / 0.4), transparent 65%),
+      radial-gradient(140% 140% at 50% 80%, hsla(var(--accent) / 0.3), transparent 70%);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }

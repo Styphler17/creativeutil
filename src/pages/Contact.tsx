@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MessageSquare, Send } from "lucide-react";
-import bgImage from "@/assets/bg-1.png";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -60,14 +59,7 @@ const Contact = () => {
         </script>
       </Helmet>
       <div className="min-h-screen flex flex-col relative overflow-hidden">
-      <div
-        className="fixed inset-0 -z-10 opacity-30"
-        style={{
-          backgroundImage: `url(${bgImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      />
+      <div className="fixed inset-0 -z-10 opacity-40 pattern-bg" />
 
       <div className="fixed top-1/3 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl -z-10" />
       <div className="fixed bottom-0 left-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl -z-10" />

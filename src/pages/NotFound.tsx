@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Home, ArrowLeft } from "lucide-react";
-import bgImage from "@/assets/bg-1.png";
 
 const NotFound = () => {
   const location = useLocation();
@@ -38,14 +37,7 @@ const NotFound = () => {
       </Helmet>
       <div className="min-h-screen flex flex-col relative overflow-hidden">
         {/* Animated Background */}
-        <div
-          className="fixed inset-0 -z-10 opacity-30"
-          style={{
-            backgroundImage: `url(${bgImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
+        <div className="fixed inset-0 -z-10 opacity-40 pattern-bg" />
 
         {/* Gradient Overlays */}
         <div className="fixed top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl -z-10" />

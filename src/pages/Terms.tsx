@@ -3,7 +3,6 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BackToTop } from "@/components/BackToTop";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import bgImage from "@/assets/bg-1.png";
 
 const Terms = () => {
   return (
@@ -25,14 +24,7 @@ const Terms = () => {
       </Helmet>
       <div className="min-h-screen flex flex-col relative overflow-hidden">
         {/* Animated Background */}
-        <div
-          className="fixed inset-0 -z-10 opacity-30"
-          style={{
-            backgroundImage: `url(${bgImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
+        <div className="fixed inset-0 -z-10 opacity-40 pattern-bg" />
 
         {/* Gradient Overlays */}
         <div className="fixed top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl -z-10" />

@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Sparkles } from "lucide-react";
-import bgImage from "@/assets/bg-1.png";
 
 import { tools } from "@/config/tools";
 
@@ -41,7 +40,7 @@ const Index = () => {
             "@type": "Organization",
             "name": "CreativeUtil",
             "url": "https://creativeutil.com/",
-            "logo": "https://creativeutil.com/assets/creativeutil-logo.png",
+            "logo": "https://creativeutil.com/assets/creativeutil-logo.svg",
             "description": "Your one-stop toolkit for web development, design, and productivity tools.",
             "sameAs": [
               "https://twitter.com/CreativeUtil"
@@ -57,14 +56,7 @@ const Index = () => {
       </Helmet>
       <div className="min-h-screen flex flex-col relative overflow-hidden">
         {/* Animated Background */}
-        <div 
-          className="fixed inset-0 -z-10 opacity-30"
-          style={{
-            backgroundImage: `url(${bgImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
+        <div className="fixed inset-0 -z-10 opacity-40 pattern-bg" />
         
         {/* Gradient Overlays */}
         <div className="fixed top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl -z-10" />
