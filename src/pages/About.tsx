@@ -61,7 +61,7 @@ const About = () => {
             {/* Gradient Background Overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 rounded-3xl" />
 
-            <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent relative z-10">
+            <h1 className="text-4xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent relative z-10">
               About CreativeUtil
             </h1>
             <p className="text-xl text-foreground dark:text-gray-100 leading-relaxed font-semibold relative z-10">
