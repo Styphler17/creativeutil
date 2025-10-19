@@ -15,33 +15,6 @@ export const Footer = () => {
             <p className="text-muted-foreground dark:text-gray-300 mb-4">
               Your creative toolkit for modern web development and design. Build, optimize, and deploy with our comprehensive collection of developer tools.
             </p>
-            <div className="flex gap-3">
-              <a
-                href="https://github.com/creativeutil"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Visit CreativeUtil on GitHub"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-              <a
-                href="https://twitter.com/CreativeUtil"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Follow CreativeUtil on Twitter"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a
-                href="mailto:support@creativeutil.com"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Contact CreativeUtil via email"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
-            </div>
           </div>
 
           {/* Tools Section */}
@@ -117,10 +90,7 @@ export const Footer = () => {
         </div>
 
         <div className={`mt-8 pt-8 border-t text-center ${theme === 'dark' ? 'border-gray-700 text-gray-400' : 'border-gray-200 text-gray-500'}`}>
-          <p>&copy; 2025 CreativeUtil. All rights reserved. Built with ❤️ for developers and designers worldwide.</p>
-          <p className="text-sm mt-2">
-            Empowering creativity through innovative web development tools.
-          </p>
+          <p>&copy; 2025 CreativeUtil. All rights reserved.</p>
         </div>
       </div>
     </footer>
