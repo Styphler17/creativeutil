@@ -51,13 +51,13 @@ export const Footer = () => {
               <Link to="/tools/markdown-preview" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors">
                 Markdown Preview
               </Link>
-              <Link to="/tools/qr-code-generator" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors">
+              <Link to="/tools/qr-generator" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors">
                 QR Code Generator
               </Link>
               <Link to="/tools/json-formatter" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors">
                 JSON Formatter
               </Link>
-              <Link to="/tools/css-gradient-generator" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors">
+              <Link to="/tools/css-gradient" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors">
                 CSS Gradient Generator
               </Link>
               <Link to="/tools" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors flex items-center gap-1">

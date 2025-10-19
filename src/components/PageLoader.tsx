@@ -1,4 +1,4 @@
-import logo from "@/assets/creativeutil-logo.svg";
+import logo from "@/assets/creativeutil-logo.png";
 
 interface PageLoaderProps {
   message?: string;

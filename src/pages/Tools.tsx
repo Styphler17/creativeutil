@@ -12,7 +12,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 
-import { Search, Sparkles, X } from "lucide-react";
+import { Search, Sparkles, X, Info } from "lucide-react";
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 import { tools } from "@/config/tools";
 
@@ -51,6 +60,7 @@ const DESKTOP_RECOMMENDED = new Set<string>([
   "api-playground",
   "json-yaml-xml-diff-merge",
   "css-animation-generator",
+  "responsive-email-signature-generator",
 ]);
 
 const MOBILE_FRIENDLY = new Set<string>([
@@ -543,14 +553,6 @@ const Tools = () => {
                   onClick={() => window.open('mailto:support@creativeutil.com?subject=Tool Request&body=Hi, I would like to request a new tool: [Tool Name]%0A%0ADescription: [Brief description of what the tool should do]%0A%0AUse case: [How would you use this tool?]')}
                 >
                   Request a Tool
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="glass border-2 border-primary/50 px-8 py-4 text-lg rounded-full hover:scale-105 transition-all font-bold text-primary hover:bg-primary/10"
-                  onClick={() => window.open('https://github.com/creativeutil/tools/discussions', '_blank')}
-                >
-                  Join Discussion
                 </Button>
               </div>
             </div>

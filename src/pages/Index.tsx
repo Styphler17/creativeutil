@@ -172,47 +172,6 @@ const Index = () => {
             </div>
           </section>
 
-          {/* API Integrations Section */}
-          <section className="max-w-7xl mx-auto mt-24 relative">
-            {/* Section Divider */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-secondary to-transparent opacity-50" />
-
-            <div className="glass rounded-3xl p-12 text-center space-y-6 relative overflow-hidden">
-              {/* Gradient Background Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-accent/5 to-primary/10 rounded-3xl" />
-
-              <h2 className="text-3xl font-bold relative z-10 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                API Integrations
-              </h2>
-              <p className="text-xl text-foreground font-semibold max-w-3xl mx-auto relative z-10">
-                Integrate CreativeUtil tools into your own projects and applications
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 relative z-10">
-                <div className="space-y-2 p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 backdrop-blur-sm">
-                  <div className="text-4xl">🔗</div>
-                  <h3 className="text-xl font-bold text-primary">RESTful APIs</h3>
-                  <p className="text-foreground font-medium">
-                    Access all tools programmatically with simple REST endpoints
-                  </p>
-                </div>
-                <div className="space-y-2 p-6 rounded-2xl bg-gradient-to-br from-secondary/5 to-accent/5 backdrop-blur-sm">
-                  <div className="text-4xl">⚙️</div>
-                  <h3 className="text-xl font-bold text-secondary">SDK Libraries</h3>
-                  <p className="text-foreground font-medium">
-                    JavaScript, Python, and more SDKs for seamless integration
-                  </p>
-                </div>
-                <div className="space-y-2 p-6 rounded-2xl bg-gradient-to-br from-accent/5 to-primary/5 backdrop-blur-sm">
-                  <div className="text-4xl">🚀</div>
-                  <h3 className="text-xl font-bold text-accent">Developer Portal</h3>
-                  <p className="text-foreground font-medium">
-                    Comprehensive docs, examples, and API playground
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
           {/* Features Section */}
           <section className="max-w-7xl mx-auto mt-24 relative">
             {/* Section Divider */}

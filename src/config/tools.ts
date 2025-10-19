@@ -80,6 +80,9 @@ const DomainAvailabilityNameGenerator = lazy(() => import('@/components/tools/Do
 const AccessibilityContrastGuidedFixer = lazy(() => import('@/components/tools/AccessibilityContrastGuidedFixer').then(m => ({ default: m.AccessibilityContrastGuidedFixer })));
 const IconFontGenerator = lazy(() => import('@/components/tools/IconFontGenerator').then(m => ({ default: m.IconFontGenerator })));
 
+const WebsiteTechStackInspector = lazy(() => import('@/components/tools/WebsiteTechStackInspector').then(m => ({ default: m.WebsiteTechStackInspector })));
+const ResponsiveEmailSignatureGenerator = lazy(() => import('@/components/tools/ResponsiveEmailSignatureGenerator').then(m => ({ default: m.ResponsiveEmailSignatureGenerator })));
+
 
 interface BaseToolConfig {
   id: string;
@@ -414,6 +417,15 @@ const baseTools: BaseToolConfig[] = [
     category: "Design Tools",
   },
   {
+    id: "responsive-email-signature-generator",
+    title: "Responsive Email Signature Generator",
+    description: "Design adaptive email signatures with branding, social buttons, disclaimers, and exportable HTML.",
+    icon: Mail,
+    color: getToolColor(34),
+    component: ResponsiveEmailSignatureGenerator,
+    category: "Design Tools",
+  },
+  {
     id: "domain-availability-name-generator",
     title: "Brand Name & Palette Generator",
     description: "Enter keywords to generate memorable brand names with accessible color pairings ready for identity design.",
@@ -440,9 +452,18 @@ const baseTools: BaseToolConfig[] = [
     component: IconFontGenerator,
     category: "Design Tools",
   },
+  {
+    id: "website-tech-stack-inspector",
+    title: "Website Tech Stack Inspector",
+    description: "Analyze a website's technology stack including frameworks, CMS, servers, and analytics tools.",
+    icon: Monitor,
+    color: getToolColor(37),
+    component: WebsiteTechStackInspector,
+    category: "Development Tools",
+  },
 ];
 
-const NEW_TOOL_COUNT = 6;
+const NEW_TOOL_COUNT = 7;
 const NEW_TOOL_THRESHOLD = Math.max(0, baseTools.length - NEW_TOOL_COUNT);
 
 export const tools: ToolConfig[] = baseTools.map((tool, index) => {
@@ -492,7 +513,9 @@ export const toolComponents = {
   'fake-csv-generator': FakeCsvGenerator,
   'social-preview-image-generator': SocialPreviewImageGenerator,
   'html-email-template-builder': HtmlEmailTemplateBuilder,
+  'responsive-email-signature-generator': ResponsiveEmailSignatureGenerator,
   'domain-availability-name-generator': DomainAvailabilityNameGenerator,
   'accessibility-contrast-guided-fixer': AccessibilityContrastGuidedFixer,
   'icon-font-generator': IconFontGenerator,
+  'website-tech-stack-inspector': WebsiteTechStackInspector,
 } as const;

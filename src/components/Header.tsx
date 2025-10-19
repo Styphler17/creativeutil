@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import logo from "@/assets/creativeutil-logo.svg";
+import logo from "@/assets/creativeutil-logo.png";
 
 export const Header = () => {
   const location = useLocation();
