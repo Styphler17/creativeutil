@@ -20,36 +20,44 @@ import Maintenance from "./pages/Maintenance";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <ThemeProvider>
-      <ToolOutputsProvider>
-        <TooltipProvider>
-          <HelmetProvider>
-            <Toaster />
-            <Sonner />
-            <BrowserRouter>
-              <Suspense fallback={<PageLoader message="Loading CreativeUtil experience..." />}>
-                <Routes>
-                  <Route path="/" element={<Index />} />
-                  <Route path="/tools" element={<Tools />} />
-                  <Route path="/tools/:id" element={<ToolPage />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/privacy" element={<Privacy />} />
-                  <Route path="/terms" element={<Terms />} />
-                  <Route path="/maintenance" element={<Maintenance />} />
+const App = () => {
+  const isMaintenanceMode = import.meta.env.VITE_MAINTENANCE_MODE === 'true';
 
-                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </Suspense>
-            </BrowserRouter>
-          </HelmetProvider>
-        </TooltipProvider>
-      </ToolOutputsProvider>
-    </ThemeProvider>
-  </QueryClientProvider>
-);
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider>
+        <ToolOutputsProvider>
+          <TooltipProvider>
+            <HelmetProvider>
+              <Toaster />
+              <Sonner />
+              {isMaintenanceMode ? (
+                <Maintenance />
+              ) : (
+                <BrowserRouter>
+                  <Suspense fallback={<PageLoader message="Loading CreativeUtil experience..." />}>
+                    <Routes>
+                      <Route path="/" element={<Index />} />
+                      <Route path="/tools" element={<Tools />} />
+                      <Route path="/tools/:id" element={<ToolPage />} />
+                      <Route path="/about" element={<About />} />
+                      <Route path="/contact" element={<Contact />} />
+                      <Route path="/privacy" element={<Privacy />} />
+                      <Route path="/terms" element={<Terms />} />
+                      <Route path="/maintenance" element={<Maintenance />} />
+
+                      {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                      <Route path="*" element={<NotFound />} />
+                    </Routes>
+                  </Suspense>
+                </BrowserRouter>
+              )}
+            </HelmetProvider>
+          </TooltipProvider>
+        </ToolOutputsProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

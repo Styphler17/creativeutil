@@ -71,10 +71,10 @@ const Maintenance = () => {
                 size="lg"
                 className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-6 text-lg rounded-full shadow-2xl hover:scale-105 transition-transform"
               >
-                <Link to="/">
+                <a href="/">
                   <Home className="mr-2 h-5 w-5" />
                   Back to Home
-                </Link>
+                </a>
               </Button>
               <Button
                 asChild
@@ -82,10 +82,10 @@ const Maintenance = () => {
                 variant="outline"
                 className="glass border-2 px-8 py-6 text-lg rounded-full hover:scale-105 transition-transform"
               >
-                <Link to="/contact">
+                <a href="/contact">
                   <Mail className="mr-2 h-5 w-5" />
                   Contact Us
-                </Link>
+                </a>
               </Button>
             </div>
 
