@@ -1,0 +1,320 @@
+/* Custom styles for Markdown Preview */
+
+/* GitHub Light Theme */
+.markdown-preview-github {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #24292f;
+  background: #ffffff;
+}
+
+.markdown-preview-github h1,
+.markdown-preview-github h2,
+.markdown-preview-github h3,
+.markdown-preview-github h4,
+.markdown-preview-github h5,
+.markdown-preview-github h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.markdown-preview-github h1 { font-size: 2em; border-bottom: 1px solid #d1d9e0; padding-bottom: 0.3em; }
+.markdown-preview-github h2 { font-size: 1.5em; border-bottom: 1px solid #d1d9e0; padding-bottom: 0.3em; }
+.markdown-preview-github h3 { font-size: 1.25em; }
+.markdown-preview-github h4 { font-size: 1em; }
+.markdown-preview-github h5 { font-size: 0.875em; }
+.markdown-preview-github h6 { font-size: 0.85em; color: #656d76; }
+
+.markdown-preview-github p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-preview-github blockquote {
+  margin: 0 0 16px 0;
+  padding: 0 1em;
+  color: #656d76;
+  border-left: 0.25em solid #d1d9e0;
+}
+
+.markdown-preview-github code {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(175,184,193,0.2);
+  border-radius: 6px;
+}
+
+.markdown-preview-github pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f6f8fa;
+  border-radius: 6px;
+}
+
+.markdown-preview-github pre code {
+  background: none;
+  padding: 0;
+}
+
+.markdown-preview-github table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.markdown-preview-github table th,
+.markdown-preview-github table td {
+  padding: 6px 13px;
+  border: 1px solid #d1d9e0;
+}
+
+.markdown-preview-github table th {
+  font-weight: 600;
+  background-color: #f6f8fa;
+}
+
+.markdown-preview-github ul,
+.markdown-preview-github ol {
+  padding-left: 2em;
+  margin-bottom: 16px;
+}
+
+.markdown-preview-github li {
+  margin-bottom: 0.25em;
+}
+
+.markdown-preview-github a {
+  color: #0969da;
+  text-decoration: none;
+}
+
+.markdown-preview-github a:hover {
+  text-decoration: underline;
+}
+
+.markdown-preview-github img {
+  border: 1px solid #d1d9e0;
+  border-radius: 6px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* GitHub Dark Theme */
+.markdown-preview-github.dark {
+  color: #f0f6fc;
+  background: #0d1117;
+}
+
+.markdown-preview-github.dark h1,
+.markdown-preview-github.dark h2 {
+  border-bottom-color: #30363d;
+}
+
+.markdown-preview-github.dark h6 {
+  color: #8b949e;
+}
+
+.markdown-preview-github.dark blockquote {
+  color: #8b949e;
+  border-left-color: #30363d;
+}
+
+.markdown-preview-github.dark code {
+  background-color: rgba(177,186,196,0.2);
+  color: #f0f6fc;
+}
+
+.markdown-preview-github.dark pre {
+  background-color: #161b22;
+  color: #f0f6fc;
+}
+
+.markdown-preview-github.dark table th,
+.markdown-preview-github.dark table td {
+  border-color: #30363d;
+}
+
+.markdown-preview-github.dark table th {
+  background-color: #161b22;
+}
+
+.markdown-preview-github.dark a {
+  color: #58a6ff;
+}
+
+.markdown-preview-github.dark img {
+  border-color: #30363d;
+}
+
+/* Notion-style preview */
+.markdown-preview-notion {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.7;
+  color: #37352f;
+  background: #ffffff;
+}
+
+.markdown-preview-notion h1,
+.markdown-preview-notion h2,
+.markdown-preview-notion h3 {
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: #000000;
+}
+
+.markdown-preview-notion h1 { font-size: 2.5em; }
+.markdown-preview-notion h2 { font-size: 2em; }
+.markdown-preview-notion h3 { font-size: 1.5em; }
+
+.markdown-preview-notion p {
+  margin-bottom: 1em;
+  color: #37352f;
+}
+
+.markdown-preview-notion blockquote {
+  border-left: 3px solid #37352f;
+  padding-left: 1em;
+  margin: 1em 0;
+  font-style: italic;
+  color: #787774;
+}
+
+.markdown-preview-notion code {
+  background: #f1f1ef;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+  font-size: 0.9em;
+}
+
+.markdown-preview-notion pre {
+  background: #f1f1ef;
+  padding: 1em;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+.markdown-preview-notion pre code {
+  background: none;
+  padding: 0;
+}
+
+.markdown-preview-notion table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+.markdown-preview-notion table th,
+.markdown-preview-notion table td {
+  border: 1px solid #e9e9e7;
+  padding: 0.5em 1em;
+  text-align: left;
+}
+
+.markdown-preview-notion table th {
+  background: #f1f1ef;
+  font-weight: 600;
+}
+
+.markdown-preview-notion ul,
+.markdown-preview-notion ol {
+  padding-left: 1.5em;
+  margin: 1em 0;
+}
+
+.markdown-preview-notion li {
+  margin-bottom: 0.5em;
+}
+
+.markdown-preview-notion a {
+  color: #37352f;
+  text-decoration: underline;
+}
+
+.markdown-preview-notion img {
+  border: 1px solid #e9e9e7;
+  border-radius: 6px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Notion Dark Theme */
+.markdown-preview-notion.dark {
+  color: #ffffff;
+  background: #191919;
+}
+
+.markdown-preview-notion.dark h1,
+.markdown-preview-notion.dark h2,
+.markdown-preview-notion.dark h3 {
+  color: #ffffff;
+}
+
+.markdown-preview-notion.dark p {
+  color: #e0e0e0;
+}
+
+.markdown-preview-notion.dark blockquote {
+  border-left-color: #ffffff;
+  color: #b0b0b0;
+}
+
+.markdown-preview-notion.dark code {
+  background: #2a2a2a;
+  color: #ffffff;
+}
+
+.markdown-preview-notion.dark pre {
+  background: #2a2a2a;
+  color: #ffffff;
+}
+
+.markdown-preview-notion.dark table th,
+.markdown-preview-notion.dark table td {
+  border-color: #404040;
+}
+
+.markdown-preview-notion.dark table th {
+  background: #2a2a2a;
+  color: #ffffff;
+}
+
+.markdown-preview-notion.dark table td {
+  color: #e0e0e0;
+}
+
+.markdown-preview-notion.dark a {
+  color: #ffffff;
+}
+
+.markdown-preview-notion.dark img {
+  border-color: #404040;
+}
+
+/* Custom font sizes */
+.markdown-font-small {
+  font-size: 0.875em;
+}
+
+.markdown-font-medium {
+  font-size: 1em;
+}
+
+.markdown-font-large {
+  font-size: 1.125em;
+}
+
+.markdown-font-xl {
+  font-size: 1.25em;
+}
+
+
