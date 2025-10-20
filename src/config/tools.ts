@@ -84,6 +84,7 @@ const WebsiteTechStackInspector = lazy(() => import('@/components/tools/WebsiteT
 const ResponsiveEmailSignatureGenerator = lazy(() => import('@/components/tools/ResponsiveEmailSignatureGenerator').then(m => ({ default: m.ResponsiveEmailSignatureGenerator })));
 
 
+
 interface BaseToolConfig {
   id: string;
   title: string;
@@ -461,6 +462,7 @@ const baseTools: BaseToolConfig[] = [
     component: WebsiteTechStackInspector,
     category: "Development Tools",
   },
+
 ];
 
 const NEW_TOOL_COUNT = 7;
@@ -518,4 +520,5 @@ export const toolComponents = {
   'accessibility-contrast-guided-fixer': AccessibilityContrastGuidedFixer,
   'icon-font-generator': IconFontGenerator,
   'website-tech-stack-inspector': WebsiteTechStackInspector,
+
 } as const;
