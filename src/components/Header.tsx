@@ -105,7 +105,7 @@ export const Header = () => {
           <div className="hidden md:flex items-center justify-end gap-4">
             <ThemeToggle />
             <Link
-              to="/"
+              to="/tools"
               className="bg-secondary text-secondary-foreground px-6 py-2 rounded-full font-semibold hover:scale-105 transition-transform shadow-lg"
             >
               Get Started
@@ -173,7 +173,7 @@ export const Header = () => {
             <div className="flex items-center justify-center gap-4 pt-2">
               <ThemeToggle />
               <Link
-                to="/"
+                to="/tools"
                 onClick={() => setIsMenuOpen(false)}
                 className="block bg-secondary text-secondary-foreground px-6 py-2 rounded-full font-semibold hover:scale-105 transition-transform shadow-lg text-center"
               >

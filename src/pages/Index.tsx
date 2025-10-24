@@ -99,10 +99,10 @@ const Index = () => {
                 <Button
                   size="lg"
                   variant="outline"
+                  asChild
                   className="glass border-2 border-primary/50 px-8 py-6 text-lg rounded-full hover:scale-105 transition-all font-bold text-primary hover:bg-primary/10"
-                  onClick={() => window.location.href = "/about"}
                 >
-                  Learn More
+                  <Link to="/about">Learn More</Link>
                 </Button>
               </div>
             </div>
