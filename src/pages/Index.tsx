@@ -102,7 +102,7 @@ const Index = () => {
                   asChild
                   className="glass border-2 border-primary/50 px-8 py-6 text-lg rounded-full hover:scale-105 transition-all font-bold text-primary hover:bg-primary/10"
                 >
-                  <Link to="/about">Learn More</Link>
+                  <Link to="/about" aria-label="Learn more about CreativeUtil">Learn More</Link>
                 </Button>
               </div>
             </div>
