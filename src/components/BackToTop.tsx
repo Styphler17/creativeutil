@@ -32,6 +32,7 @@ export const BackToTop = () => {
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
       }`}
       size="icon"
+      aria-label="Scroll to top"
     >
       <ChevronUp className="h-5 w-5" />
     </Button>
