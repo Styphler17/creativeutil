@@ -1,21 +1,52 @@
 import { Helmet } from "react-helmet-async";
+import { useEffect, useRef } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import emailjs from '@emailjs/browser';
 import { Mail, MessageSquare, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const { toast } = useToast();
+  const form = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    // Initialize EmailJS - Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+    emailjs.init("1k54EwsJh8dEEwjlq");
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
+
+    if (!form.current) return;
+
+    try {
+      // Replace 'YOUR_TEMPLATE_ID' with your actual EmailJS template ID
+      await emailjs.sendForm(
+        "service_5w533ca",
+        "template_ic1fwsh",
+        form.current,
+        "1k54EwsJh8dEEwjlq"
+      );
+      
+      toast({
+        title: "Message Sent!",
+        description: "We'll get back to you as soon as possible.",
+      });
+
+      // Reset form
+      form.current.reset();
+    } catch (error) {
+      console.error('EmailJS send error:', error);
+      toast({
+        title: "Failed to Send Message",
+        description: "Please try again later or contact us directly at brastyphler17@gmail.com",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -123,13 +154,14 @@ const Contact = () => {
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
                     Name
                   </label>
                   <Input 
                     id="name"
+                    name="user_name"
                     placeholder="Your name" 
                     required 
                     className="glass"
@@ -142,6 +174,7 @@ const Contact = () => {
                   </label>
                   <Input 
                     id="email"
+                    name="user_email"
                     type="email" 
                     placeholder="your@email.com" 
                     required 
@@ -155,6 +188,7 @@ const Contact = () => {
                   </label>
                   <Textarea 
                     id="message"
+                    name="message"
                     placeholder="Tell us what you're thinking about..." 
                     rows={5}
                     required 

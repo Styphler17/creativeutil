@@ -81,7 +81,8 @@
     "turndown": "^7.2.1",
     "vaul": "^0.9.9",
     "xlsx": "^0.18.5",
-    "zod": "^3.25.76"
+    "zod": "^3.25.76",
+    "@emailjs/browser": "^4.4.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
