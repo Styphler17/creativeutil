@@ -16,12 +16,12 @@ const About = () => {
         <meta property="og:description" content="Learn about CreativeUtil, your ultimate creative toolkit for modern web development and design." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://creativeutil.com/about" />
-        <meta property="og:image" content="https://creativeutil.com/assets/creativeutil-about-og-image.png" />
+        <meta property="og:image" content="https://creativeutil.com/assets/creativeutil-about-og-image.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@CreativeUtil" />
         <meta name="twitter:title" content="About CreativeUtil – Your Creative Toolkit" />
         <meta name="twitter:description" content="Learn about CreativeUtil, your ultimate creative toolkit for modern web development and design." />
-        <meta name="twitter:image" content="https://creativeutil.com/assets/creativeutil-about-og-image.png" />
+        <meta name="twitter:image" content="https://creativeutil.com/assets/creativeutil-about-og-image.webp" />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
           {JSON.stringify({

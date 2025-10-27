@@ -41,12 +41,12 @@ const ToolPage = () => {
         <meta property="og:description" content={`${tool.description} - Free online tool at CreativeUtil.`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://creativeutil.com/tools/${tool.id}`} />
-        <meta property="og:image" content={`https://creativeutil.com/assets/tools/${tool.id}-og-image.png`} />
+        <meta property="og:image" content={`https://creativeutil.com/assets/tools/${tool.id}-og-image.webp`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@CreativeUtil" />
         <meta name="twitter:title" content={`${tool.title} - CreativeUtil`} />
         <meta name="twitter:description" content={`${tool.description} - Free online tool at CreativeUtil.`} />
-        <meta name="twitter:image" content={`https://creativeutil.com/assets/tools/${tool.id}-og-image.png`} />
+        <meta name="twitter:image" content={`https://creativeutil.com/assets/tools/${tool.id}-og-image.webp`} />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
           {JSON.stringify({

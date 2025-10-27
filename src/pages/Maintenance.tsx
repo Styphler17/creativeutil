@@ -17,12 +17,12 @@ const Maintenance = () => {
         <meta property="og:description" content="CreativeUtil is temporarily under maintenance. We'll be back soon!" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://creativeutil.com/maintenance" />
-        <meta property="og:image" content="https://creativeutil.com/assets/creativeutil-og-image.png" />
+        <meta property="og:image" content="https://creativeutil.com/assets/creativeutil-og-image.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@CreativeUtil" />
         <meta name="twitter:title" content="Maintenance Mode – CreativeUtil" />
         <meta name="twitter:description" content="CreativeUtil is temporarily under maintenance. We'll be back soon!" />
-        <meta name="twitter:image" content="https://creativeutil.com/assets/creativeutil-og-image.png" />
+        <meta name="twitter:image" content="https://creativeutil.com/assets/creativeutil-og-image.webp" />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <div className="min-h-screen flex flex-col relative overflow-hidden">

@@ -3,20 +3,21 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { ToolOutputsProvider } from "@/contexts/ToolOutputsContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { PageLoader } from "@/components/PageLoader";
 import Index from "./pages/Index";
-import Tools from "./pages/Tools";
-import ToolPage from "./pages/ToolPage";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Privacy from "./pages/Privacy";
-import Terms from "./pages/Terms";
-import NotFound from "./pages/NotFound";
-import Maintenance from "./pages/Maintenance";
+
+const Tools = lazy(() => import("./pages/Tools"));
+const ToolPage = lazy(() => import("./pages/ToolPage"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+const Terms = lazy(() => import("./pages/Terms"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const Maintenance = lazy(() => import("./pages/Maintenance"));
 
 const queryClient = new QueryClient();
 
@@ -32,7 +33,9 @@ const App = () => {
               <Toaster />
               <Sonner />
               {isMaintenanceMode ? (
-                <Maintenance />
+                <Suspense fallback={<PageLoader message="Loading CreativeUtil experience..." />}>
+                  <Maintenance />
+                </Suspense>
               ) : (
                 <BrowserRouter>
                   <Suspense fallback={<PageLoader message="Loading CreativeUtil experience..." />}>

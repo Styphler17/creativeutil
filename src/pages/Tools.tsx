@@ -190,12 +190,12 @@ const Tools = () => {
         <meta property="og:description" content="Explore CreativeUtil's comprehensive collection of web development tools for developers and designers." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://creativeutil.com/tools" />
-        <meta property="og:image" content="https://creativeutil.com/assets/creativeutil-tools-og-image.png" />
+        <meta property="og:image" content="https://creativeutil.com/assets/creativeutil-tools-og-image.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@CreativeUtil" />
         <meta name="twitter:title" content="CreativeUtil Tools – Professional Web Development & Design Utilities" />
         <meta name="twitter:description" content="Explore CreativeUtil's comprehensive collection of web development tools for developers and designers." />
-        <meta name="twitter:image" content="https://creativeutil.com/assets/creativeutil-tools-og-image.png" />
+        <meta name="twitter:image" content="https://creativeutil.com/assets/creativeutil-tools-og-image.webp" />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
           {JSON.stringify({

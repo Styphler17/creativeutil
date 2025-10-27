@@ -21,19 +21,19 @@ export const Footer = () => {
           <div>
             <h4 className={`font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Popular Tools</h4>
             <div className="flex flex-col gap-2">
-              <Link to="/tools/markdown-preview" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors">
+              <Link to="/tools/markdown-preview" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors inline-flex w-fit">
                 Markdown Preview
               </Link>
-              <Link to="/tools/qr-generator" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors">
+              <Link to="/tools/qr-generator" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors inline-flex w-fit">
                 QR Code Generator
               </Link>
-              <Link to="/tools/json-formatter" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors">
+              <Link to="/tools/json-formatter" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors inline-flex w-fit">
                 JSON Formatter
               </Link>
-              <Link to="/tools/css-gradient" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors">
+              <Link to="/tools/css-gradient" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors inline-flex w-fit">
                 CSS Gradient Generator
               </Link>
-              <Link to="/tools" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors flex items-center gap-1">
+              <Link to="/tools" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors inline-flex items-center gap-1 w-fit">
                 View All Tools <ExternalLink className="w-3 h-3" />
               </Link>
             </div>
@@ -43,21 +43,13 @@ export const Footer = () => {
           <div>
             <h4 className={`font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Resources</h4>
             <div className="flex flex-col gap-2">
-              <Link to="/about" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors">
+              <Link to="/about" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors inline-flex w-fit">
                 About Us
               </Link>
-              <Link to="/contact" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors">
+              <Link to="/contact" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors inline-flex w-fit">
                 Contact
               </Link>
-              <a
-                href="https://github.com/creativeutil/tools/discussions"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors"
-              >
-                Community Discussions
-              </a>
-              <Link to="/tools" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors">
+              <Link to="/tools" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors inline-flex w-fit">
                 Tool Directory
               </Link>
             </div>
@@ -67,21 +59,21 @@ export const Footer = () => {
           <div>
             <h4 className={`font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Legal & Support</h4>
             <div className="flex flex-col gap-2">
-              <Link to="/privacy" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors">
+              <Link to="/privacy" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors inline-flex w-fit">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors">
+              <Link to="/terms" className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors inline-flex w-fit">
                 Terms of Service
               </Link>
               <a
                 href="mailto:support@creativeutil.com?subject=Support Request"
-                className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors"
+                className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors inline-flex w-fit"
               >
                 Support
               </a>
               <a
                 href="mailto:support@creativeutil.com?subject=Tool Request&body=Hi, I would like to request a new tool: [Tool Name]%0A%0ADescription: [Brief description of what the tool should do]%0A%0AUse case: [How would you use this tool?]"
-                className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors"
+                className="text-muted-foreground dark:text-gray-300 hover:text-primary dark:hover:text-cyan-400 transition-colors inline-flex w-fit"
               >
                 Request a Tool
               </a>

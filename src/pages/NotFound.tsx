@@ -17,12 +17,12 @@ const NotFound = () => {
         <meta property="og:description" content="Sorry, the page you're looking for doesn't exist. Return to CreativeUtil's homepage." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://creativeutil.com/404" />
-        <meta property="og:image" content="https://creativeutil.com/assets/creativeutil-og-image.png" />
+        <meta property="og:image" content="https://creativeutil.com/assets/creativeutil-og-image.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@CreativeUtil" />
         <meta name="twitter:title" content="Page Not Found – CreativeUtil" />
         <meta name="twitter:description" content="Sorry, the page you're looking for doesn't exist. Return to CreativeUtil's homepage." />
-        <meta name="twitter:image" content="https://creativeutil.com/assets/creativeutil-og-image.png" />
+        <meta name="twitter:image" content="https://creativeutil.com/assets/creativeutil-og-image.webp" />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <div className="min-h-screen flex flex-col relative overflow-hidden">

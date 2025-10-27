@@ -1,37 +1,73 @@
 import { Helmet } from "react-helmet-async";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import emailjs from '@emailjs/browser';
-import { Mail, MessageSquare, Send } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { Mail, MessageSquare, Send, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const { toast } = useToast();
   const form = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const emailJsConfig = {
+    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY ?? "1k54EwsJh8dEEwjlq",
+    serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID ?? "service_5w533ca",
+    templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID ?? "template_ic1fwsh",
+  };
 
   useEffect(() => {
-    // Initialize EmailJS - Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
-    emailjs.init("1k54EwsJh8dEEwjlq");
-  }, []);
+    if (!emailJsConfig.publicKey) {
+      console.warn("EmailJS public key is missing. Contact form submissions are disabled.");
+      return;
+    }
+
+    emailjs.init({
+      publicKey: emailJsConfig.publicKey,
+    });
+  }, [emailJsConfig.publicKey]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!form.current) return;
 
+    if (!emailJsConfig.publicKey || !emailJsConfig.serviceId || !emailJsConfig.templateId) {
+      toast({
+        title: "Configuration Error",
+        description: "The contact form is temporarily unavailable. Please reach us at brastyphler17@gmail.com.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
     try {
-      // Replace 'YOUR_TEMPLATE_ID' with your actual EmailJS template ID
-      await emailjs.sendForm(
-        "service_5w533ca",
-        "template_ic1fwsh",
-        form.current,
-        "1k54EwsJh8dEEwjlq"
+      const formData = new FormData(form.current);
+      const templateParams = Array.from(formData.entries()).reduce<Record<string, string>>(
+        (acc, [key, value]) => {
+          acc[key] = typeof value === "string" ? value : value.name;
+          return acc;
+        },
+        {},
       );
-      
+
+      const response = await emailjs.send(
+        emailJsConfig.serviceId,
+        emailJsConfig.templateId,
+        templateParams,
+        emailJsConfig.publicKey
+      );
+
+      if (response.status !== 200) {
+        throw new Error(`EmailJS responded with status ${response.status}`);
+      }
+
       toast({
         title: "Message Sent!",
         description: "We'll get back to you as soon as possible.",
@@ -46,6 +82,8 @@ const Contact = () => {
         description: "Please try again later or contact us directly at brastyphler17@gmail.com",
         variant: "destructive",
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -61,12 +99,12 @@ const Contact = () => {
         <meta property="og:description" content="Have questions about CreativeUtil? Contact our team for support, feedback, or partnership inquiries." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://creativeutil.com/contact" />
-        <meta property="og:image" content="https://creativeutil.com/assets/creativeutil-contact-og-image.png" />
+        <meta property="og:image" content="https://creativeutil.com/assets/creativeutil-contact-og-image.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@CreativeUtil" />
         <meta name="twitter:title" content="Contact CreativeUtil – Get in Touch with Our Team" />
         <meta name="twitter:description" content="Have questions about CreativeUtil? Contact our team for support, feedback, or partnership inquiries." />
-        <meta name="twitter:image" content="https://creativeutil.com/assets/creativeutil-contact-og-image.png" />
+        <meta name="twitter:image" content="https://creativeutil.com/assets/creativeutil-contact-og-image.webp" />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -105,7 +143,7 @@ const Contact = () => {
         <div className="max-w-5xl mx-auto">
           <div className="glass rounded-3xl p-12 relative overflow-hidden">
             {/* Gradient Background Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 rounded-3xl" />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 rounded-3xl pointer-events-none" />
 
             <div className="text-center mb-12 relative z-10">
               <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
@@ -145,7 +183,7 @@ const Contact = () => {
 
                 <div className="glass rounded-2xl p-6 space-y-2 relative overflow-hidden">
                   {/* Card Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 rounded-2xl" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 rounded-2xl pointer-events-none" />
 
                   <h4 className="font-semibold relative z-10 text-accent">Quick Response</h4>
                   <p className="text-sm text-foreground dark:text-gray-300 font-medium relative z-10">
@@ -154,7 +192,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <form ref={form} onSubmit={handleSubmit} className="space-y-6">
+              <form ref={form} onSubmit={handleSubmit} className="space-y-6 relative z-10">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
                     Name
@@ -196,12 +234,22 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button 
+                <Button
                   type="submit"
-                  className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground py-6 rounded-xl text-lg"
+                  disabled={isSubmitting}
+                  className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground py-6 rounded-xl text-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <Send className="mr-2 h-5 w-5" />
-                  Send Message
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-5 w-5" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
               </form>
             </div>

@@ -1,19 +1,19 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BackToTop } from "@/components/BackToTop";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Sparkles } from "lucide-react";
 
-import { tools } from "@/config/tools";
-
-const featuredTools = tools.slice(0, 4);
+import { featuredTools } from "@/config/featured-tools";
 
 const Index = () => {
+  const navigate = useNavigate();
+
+  const handleLearnMoreClick = () => {
+    navigate("/about", { replace: false, state: { from: "hero" } });
+  };
 
   return (
     <>
@@ -27,12 +27,12 @@ const Index = () => {
         <meta property="og:description" content="Discover, preview, and use creative tools for modern web development and design at CreativeUtil." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://creativeutil.com/" />
-        <meta property="og:image" content="https://creativeutil.com/assets/creativeutil-og-image.png" />
+        <meta property="og:image" content="https://creativeutil.com/assets/creativeutil-og-image.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@CreativeUtil" />
         <meta name="twitter:title" content="CreativeUtil – Your Creative Toolkit" />
         <meta name="twitter:description" content="Explore a curated collection of creative tools at CreativeUtil for web development and design needs." />
-        <meta name="twitter:image" content="https://creativeutil.com/assets/creativeutil-og-image.png" />
+        <meta name="twitter:image" content="https://creativeutil.com/assets/creativeutil-og-image.webp" />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -99,10 +99,11 @@ const Index = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  asChild
+                  onClick={handleLearnMoreClick}
                   className="glass border-2 border-primary/50 px-8 py-6 text-lg rounded-full hover:scale-105 transition-all font-bold text-primary hover:bg-primary/10"
+                  aria-label="Learn more about CreativeUtil"
                 >
-                  <Link to="/about" aria-label="Learn more about CreativeUtil">Learn More</Link>
+                  Learn More
                 </Button>
               </div>
             </div>
@@ -170,6 +171,7 @@ const Index = () => {
                 <Link to="/tools">View All Tools</Link>
               </Button>
             </div>
+
           </section>
 
           {/* Features Section */}

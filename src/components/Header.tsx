@@ -12,17 +12,24 @@ export const Header = () => {
 
   useEffect(() => {
     let lastScrollY = window.pageYOffset;
+    let ticking = false;
 
     const handleScroll = () => {
-      const currentScrollY = window.pageYOffset;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const currentScrollY = window.pageYOffset;
 
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsHidden(true);
-      } else {
-        setIsHidden(false);
+          if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            setIsHidden(true);
+          } else {
+            setIsHidden(false);
+          }
+
+          lastScrollY = currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
       }
-
-      lastScrollY = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
